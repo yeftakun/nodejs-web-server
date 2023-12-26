@@ -1,7 +1,8 @@
 const http = require('http');
  
 const requestListener = (request, response) => {
-    response.setHeader('Content-Type', 'text/html');
+    response.setHeader('Content-Type', 'application/json'); // mengubah Content-Type menjadi JSON
+    response.setHeader('X-Powered-By', 'NodeJS');
     // response.statusCode = 200;
  
     const { method, url } = request;
@@ -40,7 +41,10 @@ const requestListener = (request, response) => {
     } else {
         // TODO 1: logika respons bila url bukan '/' atau '/about'
         response.statusCode = 404;
-        response.end('<h1>Halaman tidak ditemukan!</h1>');
+        // response.end('<h1>Halaman tidak ditemukan!</h1>');
+        response.end(JSON.stringify({
+            message: 'Halaman tidak ditemukan!',
+        }));
     }
  
     /** Kode komentar disembunyikan agar lebih ringkas */
