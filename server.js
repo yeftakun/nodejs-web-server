@@ -1,10 +1,9 @@
 const http = require('http');
 
 const requestListener = (request, response) => {
-    response.setHeader('Content-Type', 'text/html');
-    // response.statusCode = 200; // lalu tulis status code satu persatu sebelum response.end()
-
- 
+    response.setHeader('Content-Type', 'application/json');
+    response.setHeader('Powered-By', 'Node.js');
+    
     const { method, url } = request;
 
     if(url === '/') {
