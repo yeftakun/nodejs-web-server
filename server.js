@@ -5,24 +5,6 @@ const requestListener = (request, response) => {
     response.statusCode = 200;
  
     const { method, url } = request;
- 
-    // if(method === 'GET') {
-    //     response.end('<h1>Hello!</h1>');
-    // }
- 
-    // if(method === 'POST') {
-    //     let body = [];
-    
-    //     request.on('data', (chunk) => {
-    //         body.push(chunk);
-    //     });
- 
-    //     request.on('end', () => {
-    //         body = Buffer.concat(body).toString();
-    //         const { name } = JSON.parse(body);
-    //         response.end(`<h1>Hai, ${name}!</h2>`);
-    //     });
-    // }
 
     if(url === '/') {
         // TODO 2: logika respons bila url bernilai '/'
